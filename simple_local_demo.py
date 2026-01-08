@@ -268,19 +268,29 @@ def main():
     # Initialize system
     system = LocalMultiAgentSystem()
 
-    # Sample story (longer example)
+    # Sample story (comprehensive example with complex relationships)
     sample_story = """
-    In a beautiful mountainous village, there lived an old woman named Granny. Granny was 75 years old with white hair and eyes that told stories of many years of experience. She was always calm and wise, and guided the villagers.
+    In Tehran city, there lived a young engineer named Ahmad. Ahmad was 28 years old, had neat black hair and always wore dark suits. He was a software engineer working at a big company. Ahmad was a serious and competent man who spent most of his time working and didn't have many social relationships.
 
-    One spring day, a boy named Arman came to the village. Arman was 14 years old, had messy brown hair and eyes full of curiosity. He was adventurous and brave but seemed a bit inexperienced. Arman had come from the big city to spend his vacation with his grandfather.
+    Ahmad's sister, Sara, was 25 years old and completely different from him. Sara had long brown hair, always wore colorful clothes, and was a painter. She was social and energetic with many friends. Sara always tried to convince her brother to enjoy life more.
 
-    Granny, upon seeing Arman, felt that this boy needed guidance. She began telling him stories of the old village. Arman, in turn, told her about city life and his school. A deep friendship formed between them.
+    One autumn day, Ahmad accidentally met a girl named Nazanin. Nazanin was 26 years old, had curly black hair and deep, thoughtful eyes. She was a psychologist and had a large library in her home. Nazanin was calm and a good listener, exactly what Ahmad needed.
 
-    One stormy night, the mountains around the village suffered from landslides. The villagers were terrified. Arman, with his courage, decided to go to the mountain and save others. Granny, despite her old age, went with him to guide him.
+    They started dating. Ahmad, who was always serious, became calmer with Nazanin. Sara also developed a good relationship with Nazanin and often painted together. But there was a problem: Ahmad couldn't express his feelings. He had fallen in love with Nazanin but couldn't confess it.
 
-    In the mountain, they faced many challenges: heavy rain, complete darkness, and dangerous paths. Arman wanted to give up several times, but Granny encouraged him with her wisdom. Finally, they reached a spring that could solve the landslide problem.
+    One rainy night, Ahmad decided to talk to Nazanin. But at the same moment, Sara faced a problem. Sara's boyfriend had broken up with her and she was sad. Ahmad had to choose between helping his sister and confessing his love.
 
-    The next morning, the village was saved and Arman became the village hero. He learned that courage alone is not enough and he needs experience and guidance. Granny was also happy that she could pass on her knowledge to the new generation.
+    Ahmad went to Sara first. He, who had now changed a bit and controlled his feelings better, managed to comfort his sister. Sara noticed her brother's changes and was happy. Then Ahmad went to Nazanin and expressed his feelings.
+
+    Nazanin, who was waiting for this moment, accepted. But their relationship wasn't simple. Ahmad was still the same serious man as before, but now a bit more open. Sara, who had recovered, had a good relationship with Nazanin.
+
+    Over time, their small family took shape. Ahmad learned that life is not just work. Sara continued painting and Nazanin continued psychology. They learned that each one, despite differences, complemented the others.
+
+    But new challenges arose. Ahmad had an important project at work that took all his time. Nazanin felt that Ahmad didn't pay as much attention to her as before. Sara, who now had a painting exhibition, needed family support.
+
+    They solved the problems through conversation. Ahmad learned to create balance between work and life. Nazanin understood that Ahmad really loved her. Sara also realized that her family was always supportive.
+
+    In the end, they became stronger than before. Ahmad was now a balanced man, Sara still happy and creative, and Nazanin satisfied with her relationship. This story shows how characters can change over time but still remain consistent.
     """
 
     print("Sample Story:")
