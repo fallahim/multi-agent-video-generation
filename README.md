@@ -295,13 +295,13 @@ python character_consistency_poc.py
 
 | مرحله | زمان صرف شده | توضیح |
 |-------|-------------|-------|
-| تحقیق چالش‌ها | 4 ساعت | بررسی مقالات و تحلیل R&D |
-| طراحی معماری | 2 ساعت | طراحی shared memory و agent coordination |
-| پیاده‌سازی PoC | 6 ساعت | کدنویسی و debugging |
-| تست و validation | 2 ساعت | edge cases و performance testing |
-| مستندسازی | 2 ساعت | README و کد comments |
+| تحقیق چالش‌ها | 1 ساعت | بررسی مقالات و تحلیل R&D |
+| طراحی معماری | 1 ساعت | طراحی shared memory و agent coordination |
+| پیاده‌سازی PoC | 2 ساعت | کدنویسی و debugging |
+| تست و validation | 1 ساعت | edge cases و performance testing |
+| مستندسازی | 1 ساعت | README و کد comments |
 
-**مجموع زمان**: 16 ساعت
+**مجموع زمان**: 6 ساعت
 
 ## منابع و ارجاعات
 
