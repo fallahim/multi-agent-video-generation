@@ -1,0 +1,52 @@
+{
+  "test_timestamp": "2025-01-08T07:30:00",
+  "total_tests": 5,
+  "passed_tests": 4,
+  "failed_tests": 1,
+  "success_rate": "80.0%",
+  "detailed_results": [
+    {
+      "test_name": "sudden_character_changes",
+      "description": "تغییرات ناگهانی کاراکتر بدون توضیح",
+      "input_length": 285,
+      "issues_detected": 2,
+      "consistency_score": "45%",
+      "characters_found": 1,
+      "scenes_created": 3,
+      "passed": true
+    },
+    {
+      "test_name": "complex_relationships",
+      "description": "مدیریت روابط پیچیده خانوادگی",
+      "input_length": 412,
+      "characters_found": 5,
+      "relationships_tracked": 8,
+      "expected_characters": 5,
+      "passed": true
+    },
+    {
+      "test_name": "inconsistent_descriptions",
+      "description": "توصیفات متناقض یک کاراکتر در صحنه‌های مختلف",
+      "input_length": 278,
+      "consistency_issues_detected": true,
+      "scenes_analyzed": 3,
+      "passed": true
+    },
+    {
+      "test_name": "name_variations",
+      "description": "تشخیص کاراکتر یکسان با نام‌های مختلف",
+      "input_length": 245,
+      "character_names_found": ["دکتر احمد حسینی", "احمد", "دکتر حسینی", "آقای حسینی", "آقای احمد"],
+      "unique_characters": 3,
+      "passed": false
+    },
+    {
+      "test_name": "minimal_story",
+      "description": "پردازش داستان بسیار کوتاه با اطلاعات محدود",
+      "input_length": 38,
+      "characters_extracted": 2,
+      "scenes_created": 1,
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "processing_timestamp": "2025-01-08T07:30:00",
+    "story_length": 450,
+    "agents_used": ["character_extractor", "scene_planner", "consistency_validator"]
+  },
+  "characters": [
+    {
+      "name": "علی",
+      "age": 12,
+      "appearance": "موهای سیاه و چشمانی باهوش",
+      "personality": "ماجراجو و کنجکاو",
+      "role": "قهرمان داستان",
+      "relationships": {
+        "سارا": "دوست"
+      }
+    },
+    {
+      "name": "سارا",
+      "age": 11,
+      "appearance": "موهای بلوند و چشمانی آبی",
+      "personality": "آرام و کتابخوان",
+      "role": "دوست علی",
+      "relationships": {
+        "علی": "دوست"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": 1,
+      "description": "معرفی علی در شهر بزرگ و تصمیم او به ماجراجویی",
+      "characters_present": ["علی"],
+      "location": "شهر بزرگ",
+      "time_of_day": "روز",
+      "mood": "ماجراجویانه",
+      "key_actions": ["معرفی شخصیت علی", "تصمیم به رفتن به پارک"]
+    },
+    {
+      "scene_id": 2,
+      "description": "ملاقات علی و سارا در پارک و شروع دوستی آنها",
+      "characters_present": ["علی", "سارا"],
+      "location": "پارک",
+      "time_of_day": "ظهر",
+      "mood": "دوستانه",
+      "key_actions": ["آشنا شدن", "شروع بازی", "پیدا کردن دوستی"]
+    },
+    {
+      "scene_id": 3,
+      "description": "شروع باران و پناه گرفتن زیر درخت",
+      "characters_present": ["علی", "سارا"],
+      "location": "پارک زیر درخت",
+      "time_of_day": "عصر",
+      "mood": "نگران کننده",
+      "key_actions": ["شروع باران", "پناه گرفتن", "آرام کردن یکدیگر"]
+    },
+    {
+      "scene_id": 4,
+      "description": "پایان باران و خداحافظی",
+      "characters_present": ["علی", "سارا"],
+      "location": "پارک",
+      "time_of_day": "عصر",
+      "mood": "خوشحال",
+      "key_actions": ["پایان باران", "برگشت به خانه", "قول دوباره دیدن"]
+    }
+  ],
+  "validation": {
+    "validation_results": [
+      {
+        "scene_id": 1,
+        "is_consistent": true,
+        "issues": [],
+        "suggestions": []
+      },
+      {
+        "scene_id": 2,
+        "is_consistent": true,
+        "issues": [],
+        "suggestions": []
+      },
+      {
+        "scene_id": 3,
+        "is_consistent": true,
+        "issues": [],
+        "suggestions": []
+      },
+      {
+        "scene_id": 4,
+        "is_consistent": true,
+        "issues": [],
+        "suggestions": []
+      }
+    ],
+    "overall_consistency": "98%"
+  },
+  "summary": {
+    "total_characters": 2,
+    "total_scenes": 4,
+    "consistency_score": "98%"
+  }
+}
