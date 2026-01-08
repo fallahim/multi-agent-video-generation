@@ -1,7 +1,7 @@
 {
   "metadata": {
     "processing_timestamp": "2025-01-08T07:30:00",
-    "story_length": 1461,
+    "story_length": 2722,
     "model": "GPT-2 (local)",
     "agents": [
       "CharacterExtractor",
@@ -26,11 +26,32 @@
   "scenes": [
     {
       "scene_id": 1,
-      "description": "desc",
+      "description": "معرفی شخصیت‌ها",
       "characters_present": [
-        "name"
+        "علی",
+        "سارا"
       ],
-      "location": "place",
+      "location": "شهر",
+      "mood": null
+    },
+    {
+      "scene_id": 2,
+      "description": "ماجراجویی",
+      "characters_present": [
+        "علی",
+        "سارا"
+      ],
+      "location": "پارک",
+      "mood": null
+    },
+    {
+      "scene_id": 3,
+      "description": "پایان داستان",
+      "characters_present": [
+        "علی",
+        "سارا"
+      ],
+      "location": "خانه",
       "mood": null
     }
   ],
@@ -45,7 +66,7 @@
   },
   "summary": {
     "total_characters": 2,
-    "total_scenes": 1,
+    "total_scenes": 3,
     "consistency_score": 85
   }
 }
