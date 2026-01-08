@@ -268,18 +268,19 @@ def main():
     # Initialize system
     system = LocalMultiAgentSystem()
 
-    # Sample story
+    # Sample story (longer example)
     sample_story = """
-    In a big city, there lived a boy named Ali. Ali was 12 years old with black hair and smart eyes.
-    He was always adventurous and curious. One day Ali decided to go to the park for an adventure.
+    In a beautiful mountainous village, there lived an old woman named Granny. Granny was 75 years old with white hair and eyes that told stories of many years of experience. She was always calm and wise, and guided the villagers.
 
-    In the park, Ali met a girl named Sara. Sara was 11 years old with blonde hair and blue eyes.
-    She was calm and book-loving. They started playing together and became close friends.
+    One spring day, a boy named Arman came to the village. Arman was 14 years old, had messy brown hair and eyes full of curiosity. He was adventurous and brave but seemed a bit inexperienced. Arman had come from the big city to spend his vacation with his grandfather.
 
-    Suddenly the sky became cloudy and it started raining. Ali and Sara took shelter under a tree.
-    Despite being afraid of thunder, Ali tried to calm Sara. Sara made the situation better by telling a story.
+    Granny, upon seeing Arman, felt that this boy needed guidance. She began telling him stories of the old village. Arman, in turn, told her about city life and his school. A deep friendship formed between them.
 
-    After the rain passed, they went back to their homes and promised to see each other again.
+    One stormy night, the mountains around the village suffered from landslides. The villagers were terrified. Arman, with his courage, decided to go to the mountain and save others. Granny, despite her old age, went with him to guide him.
+
+    In the mountain, they faced many challenges: heavy rain, complete darkness, and dangerous paths. Arman wanted to give up several times, but Granny encouraged him with her wisdom. Finally, they reached a spring that could solve the landslide problem.
+
+    The next morning, the village was saved and Arman became the village hero. He learned that courage alone is not enough and he needs experience and guidance. Granny was also happy that she could pass on her knowledge to the new generation.
     """
 
     print("Sample Story:")

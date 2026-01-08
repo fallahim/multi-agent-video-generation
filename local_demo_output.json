@@ -1,7 +1,7 @@
 {
   "metadata": {
     "processing_timestamp": "2025-01-08T07:30:00",
-    "story_length": 702,
+    "story_length": 1461,
     "model": "GPT-2 (local)",
     "agents": [
       "CharacterExtractor",
