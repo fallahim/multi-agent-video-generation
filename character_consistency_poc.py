@@ -13,11 +13,7 @@ from typing import Dict, List, Optional, Any
 from dataclasses import dataclass, asdict
 from datetime import datetime
 
-from langchain_openai import ChatOpenAI
-from langchain.prompts import PromptTemplate
-from langchain.chains import LLMChain
-from langchain.memory import ConversationBufferMemory
-from langchain.schema import BaseMessage, HumanMessage, AIMessage
+from transformers import pipeline
 
 
 @dataclass
@@ -94,11 +90,11 @@ class SharedMemory:
 class StoryProcessingAgent:
     """Base agent for processing story elements"""
 
-    def __init__(self, name: str, llm: ChatOpenAI, shared_memory: SharedMemory):
+    def __init__(self, name: str, generator, shared_memory: SharedMemory):
         self.name = name
-        self.llm = llm
+        self.generator = generator
         self.shared_memory = shared_memory
-        self.memory = ConversationBufferMemory()
+        self.memory = []  # Simple list for conversation history
 
     async def process(self, input_data: Dict[str, Any]) -> Dict[str, Any]:
         """Process input data and return results"""
@@ -154,22 +150,35 @@ class CharacterExtractionAgent(StoryProcessingAgent):
             indent=2
         )
 
-        chain = LLMChain(llm=self.llm, prompt=self.prompt)
-        result = await chain.arun(
+        # Create prompt
+        prompt_text = self.prompt.format(
             story_text=input_data["story_text"],
             existing_characters=existing_chars_json
         )
 
-        try:
-            parsed_result = json.loads(result)
-            # Update shared memory with new characters
-            for char_data in parsed_result.get("characters", []):
-                char = Character(**char_data)
-                self.shared_memory.add_character(char)
+        # Generate response using local model
+        outputs = self.generator(prompt_text, max_new_tokens=256, do_sample=True, temperature=0.7)
+        result = outputs[0]['generated_text']
 
-            return {"characters_extracted": len(parsed_result.get("characters", []))}
+        # Extract JSON from response (simple approach)
+        try:
+            # Try to find JSON in the response
+            start_idx = result.find('{')
+            end_idx = result.rfind('}') + 1
+            if start_idx != -1 and end_idx > start_idx:
+                json_str = result[start_idx:end_idx]
+                parsed_result = json.loads(json_str)
+
+                # Update shared memory with new characters
+                for char_data in parsed_result.get("characters", []):
+                    char = Character(**char_data)
+                    self.shared_memory.add_character(char)
+
+                return {"characters_extracted": len(parsed_result.get("characters", []))}
+            else:
+                return {"error": "No JSON found in response", "raw_response": result[:500]}
         except json.JSONDecodeError:
-            return {"error": "Failed to parse character extraction result"}
+            return {"error": "Failed to parse character extraction result", "raw_response": result[:500]}
 
 
 class ScenePlanningAgent(StoryProcessingAgent):
@@ -319,11 +328,17 @@ class ConsistencyValidationAgent(StoryProcessingAgent):
 class MultiAgentOrchestrator:
     """Orchestrates the multi-agent system for video generation"""
 
-    def __init__(self, openai_api_key: str):
-        self.llm = ChatOpenAI(
+    def __init__(self):
+        # Use local GPT-2 model (no API key required)
+        print("🔄 Loading local GPT-2 model... (this may take a moment)")
+        self.generator = pipeline(
+            "text-generation",
+            model="gpt2",
+            max_new_tokens=256,  # Limit output length
             temperature=0.7,
-            model="gpt-3.5-turbo",
-            openai_api_key=openai_api_key
+            do_sample=True,
+            pad_token_id=50256,
+            repetition_penalty=1.1  # Reduce repetition
         )
         self.shared_memory = SharedMemory()
         self.agents = {}
@@ -331,13 +346,13 @@ class MultiAgentOrchestrator:
     def initialize_agents(self):
         """Initialize all agents"""
         self.agents["character_extractor"] = CharacterExtractionAgent(
-            self.llm, self.shared_memory
+            self.generator, self.shared_memory
         )
         self.agents["scene_planner"] = ScenePlanningAgent(
-            self.llm, self.shared_memory
+            self.generator, self.shared_memory
         )
         self.agents["consistency_validator"] = ConsistencyValidationAgent(
-            self.llm, self.shared_memory
+            self.generator, self.shared_memory
         )
 
     async def process_story(self, story_text: str) -> Dict[str, Any]:
@@ -390,15 +405,11 @@ class MultiAgentOrchestrator:
 async def main():
     """Main function to demonstrate the PoC"""
 
-    # Load environment variables
-    openai_api_key = os.getenv("OPENAI_API_KEY")
-    if not openai_api_key:
-        print("❌ خطا: OPENAI_API_KEY تنظیم نشده است")
-        print("لطفا فایل .env ایجاد کنید و OPENAI_API_KEY را تنظیم کنید")
-        return
+    print("🚀 شروع سیستم Multi-Agent با مدل محلی GPT-2")
+    print("📝 نیازی به API key نیست - از مدل محلی استفاده می‌شود")
 
-    # Initialize orchestrator
-    orchestrator = MultiAgentOrchestrator(openai_api_key)
+    # Initialize orchestrator (no API key needed)
+    orchestrator = MultiAgentOrchestrator()
     orchestrator.initialize_agents()
 
     # Sample story (Persian)
