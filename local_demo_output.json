@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "processing_timestamp": "2025-01-08T07:30:00",
+    "story_length": 702,
+    "model": "GPT-2 (local)",
+    "agents": [
+      "CharacterExtractor",
+      "ScenePlanner",
+      "ConsistencyValidator"
+    ]
+  },
+  "characters": [
+    {
+      "name": "علی",
+      "age": 12,
+      "appearance": "موهای سیاه",
+      "personality": "ماجراجو"
+    },
+    {
+      "name": "سارا",
+      "age": 11,
+      "appearance": "موهای بلوند",
+      "personality": "آرام"
+    }
+  ],
+  "scenes": [
+    {
+      "scene_id": 1,
+      "description": "desc",
+      "characters_present": [
+        "name"
+      ],
+      "location": "place",
+      "mood": null
+    }
+  ],
+  "validation": {
+    "consistency_score": 85,
+    "issues": [
+      "minor issue"
+    ],
+    "recommendations": [
+      "suggestion"
+    ]
+  },
+  "summary": {
+    "total_characters": 2,
+    "total_scenes": 1,
+    "consistency_score": 85
+  }
+}
