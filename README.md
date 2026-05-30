@@ -1,4 +1,5 @@
 # Multi-Agent Video Generation PoC: Character Consistency Challenge
+..
 
 این پروژه یک Proof of Concept (PoC) برای حل چالش Consistency کاراکترها در سیستم‌های multi-agent video generation است.
 
